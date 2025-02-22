@@ -1,0 +1,68 @@
+"use client";
+
+import { FileClock, Home, Settings2, Wallet2 } from "lucide-react";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import React, { useEffect } from "react";
+
+/**
+ * Side navigation component.
+ *
+ * This component renders a side navigation menu with links to various pages.
+ *
+ * @returns Side navigation component
+ */
+const SideNav = () => {
+  const MenuList = [
+    {
+      name: "Home",
+      icon: Home,
+      path: "/dashboard",
+    },
+    {
+      name: "History",
+      icon: FileClock,
+      path: "/dashboard/history",
+    },
+    {
+      name: "Billing",
+      icon: Wallet2,
+      path: "/dashboard/billing",
+    },
+    {
+      name: "Settings",
+      icon: Settings2,
+      path: "/dashboard/settings",
+    },
+  ];
+
+  const path = usePathname();
+  useEffect(() => {
+    console.log(path);
+  }, [path]);
+
+  return (
+    <div className="h-screen p-5 shadow-sm border">
+      <div className="flex justify-center">
+        <Image src={"/logo.svg"} alt="logo" width={60} height={60} />
+      </div>
+      <hr className="my-5" />
+      {/* Menu List */}
+      <div className="mt-3">
+        {MenuList.map((item, index) => (
+          <div
+            key={index}
+            className={`flex gap-2 mb-2 p-3 hover:bg-primary hover:text-white rounded-lg cursor-pointer 
+              items-center ${path == item.path && "bg-primary text-white"}`}
+          >
+            <item.icon className="w-5 h-5" />
+            <h2 className="text-md-">{item.name}</h2>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default SideNav;
+
