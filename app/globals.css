@@ -30,8 +30,8 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
 
-    /* IBM Plex Mono Font */
-    --font-ibm-plex-mono: 'IBM Plex Mono', monospace;
+    /* Space Grotesk Font */
+    --font-space-grotesk: 'Space Grotesk', sans-serif;
   }
 
   .dark {
@@ -69,7 +69,63 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-ibm-plex-mono);
-    /* Apply IBM Plex Mono globally */
+    font-family: var(--font-space-grotesk);
+    /* Apply Space Grotesk globally */
+  }
+
+  /* Add gradient animation keyframes */
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Custom class for fluid gradient animation */
+  .animate-gradient {
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+  }
+}
+
+
+@layer components {
+
+  /* Space Grotesk font variants */
+  .space-grotesk-thin {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 100;
+  }
+
+  .space-grotesk-light {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 300;
+  }
+
+  .space-grotesk-regular {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+  }
+
+  .space-grotesk-medium {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+  }
+
+  .space-grotesk-semibold {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+  }
+
+  .space-grotesk-bold {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
   }
 }
