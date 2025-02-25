@@ -42,9 +42,11 @@ const SideNav = () => {
   }, [path]);
 
   return (
-    <div className="h-screen p-5 shadow-sm border">
+    <div className="h-screen p-5 shadow-sm border bg-white">
       <div className="flex justify-center">
-        <Image src={"/logo.svg"} alt="logo" width={60} height={60} />
+        <h2 className="text-2xl font-bold bg-gradient-to-br from-[#4F46E5] via-[#9B4DFF] to-[#FF9CFF] text-transparent bg-clip-text animate-gradient">
+          JotJungle𝌞
+        </h2>
       </div>
       <hr className="my-5" />
       {/* Menu List */}

@@ -3,9 +3,9 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="p-5 shadow-sm border-b-2 flex items-center justify-between">
+    <div className="p-5 shadow-sm border-b-2 flex items-center justify-between bg-white">
       {/* Search Bar */}
-      <div className="flex items-center gap-2 p-3 border rounded-lg flex-1 max-w-2xl">
+      <div className="flex items-center gap-2 p-3 border rounded-lg flex-1 max-w-2xl bg-white">
         <Search />
         <input
           type="text"

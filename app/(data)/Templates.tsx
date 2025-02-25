@@ -1,234 +1,213 @@
 export default [
-  // ==================== BLOG ====================
   {
     name: "Blog Title Generator",
     description:
-      "Generate attention-grabbing blog titles that are both SEO-friendly and highly engaging for your audience.",
+      "An AI tool that generates blog titles based on your blog information.",
     category: "Blog",
-    icon: "https://cdn-icons-png.flaticon.com/128/8089/8089953.png",
-    slug: "generate-blog-title",
+    icon: "https://cdn-icons-png.flaticon.com/128/4186/4186534.png",
     prompt:
-      "Give me 5 unique and engaging blog titles in bullet points, based only on the provided blog niche. Ensure that the titles are SEO-friendly and reflect current trends. Return the result in rich text format.",
+      "Generate 5 unique and engaging blog title ideas based on the given niche and outline. Ensure the titles are **catchy, SEO-friendly, and compelling**. Output the results in bullet points inside a rich text editor.",
+    slug: "generate-blog-title",
     form: [
       {
-        label: "Enter your blog niche (e.g., tech, travel, fitness)",
+        label: "Enter your blog niche",
         field: "input",
-        name: "blog_niche",
+        name: "niche",
         required: true,
+      },
+      {
+        label: "Enter blog outline",
+        field: "textarea",
+        name: "outline",
       },
     ],
   },
-
   {
-    name: "Blog Post Outline",
+    name: "Blog Content Generator",
     description:
-      "Generate a structured outline for your blog post to streamline your writing process and improve readability.",
+      "An AI tool that generates high-quality blog content based on your topic and outline.",
     category: "Blog",
-    icon: "https://cdn-icons-png.flaticon.com/128/13376/13376259.png",
-    slug: "generate-blog-post-outline",
+    icon: "https://cdn-icons-png.flaticon.com/128/4905/4905454.png",
+    slug: "blog-content-generation",
     prompt:
-      "Create a detailed outline for a blog post on the topic of [provided topic]. The outline should include an introduction, key sections, and a conclusion. Make sure it is structured logically for readability and SEO.",
+      "Write a detailed and **well-structured** blog post based on the provided topic and outline. Ensure the content is **engaging, informative, and optimized for readability**. Format the output in rich text with headings, subheadings, and bullet points where necessary.",
     form: [
       {
         label: "Enter your blog topic",
         field: "input",
-        name: "blog_topic",
+        name: "topic",
         required: true,
       },
-    ],
-  },
-
-  // ==================== CONTENT WRITING ====================
-  {
-    name: "Rewrite Article",
-    description:
-      "Instantly rewrite an article while keeping its original meaning intact. Improve clarity, readability, or SEO.",
-    category: "Content Writing",
-    icon: "https://cdn-icons-png.flaticon.com/128/13942/13942018.png",
-    slug: "rewrite-article",
-    prompt:
-      "Rewrite the following article while keeping its meaning intact. Improve readability, grammar, and SEO without changing the core message.",
-    form: [
       {
-        label: "Paste the article to rewrite",
+        label: "Enter blog Outline here",
         field: "textarea",
-        name: "article_content",
-        required: true,
+        name: "outline",
       },
     ],
   },
-
   {
-    name: "Listicle Generator",
+    name: "Blog Topic Ideas Generator",
     description:
-      "Generate structured list-style content for blogs, social media, or articles to present ideas concisely.",
-    category: "Content Writing",
-    icon: "https://cdn-icons-png.flaticon.com/128/4394/4394562.png",
-    slug: "generate-listicle",
+      "An AI tool that generates creative and engaging blog topic ideas based on your niche.",
+    category: "Blog",
+    icon: "https://cdn-icons-png.flaticon.com/128/11497/11497847.png",
+    slug: "blog-topic-idea",
     prompt:
-      "Create a well-structured listicle on [provided topic]. The list should be engaging, informative, and formatted for readability.",
+      "Generate 5 unique blog topic ideas based on the given niche. Ensure the topics are **trendy, attention-grabbing, and suitable for SEO**. Output the results in bullet points inside a rich text editor.",
     form: [
       {
-        label: "Enter your listicle topic",
+        label: "Enter your Niche",
         field: "input",
-        name: "listicle_topic",
+        name: "niche",
         required: true,
       },
     ],
   },
-
-  // ==================== SEO ====================
   {
-    name: "Meta Description Generator",
+    name: "YouTube SEO Title Generator",
     description:
-      "Generate SEO-optimized meta descriptions for blog posts or webpages to improve search rankings.",
-    category: "SEO",
-    icon: "https://cdn-icons-png.flaticon.com/128/11701/11701221.png",
-    slug: "generate-meta-description",
+      "An AI tool that generates high-ranking, SEO-optimized YouTube titles.",
+    category: "YouTube Tools",
+    icon: "https://cdn-icons-png.flaticon.com/128/402/402075.png",
+    slug: "youtube-seo-title",
     prompt:
-      "Generate a concise and SEO-optimized meta description (155-160 characters) for the following topic. Make sure it includes primary keywords and is attractive for search engine results.",
+      "Generate **5 highly engaging, click-worthy, and SEO-optimized** YouTube video titles based on the given keywords and outline. Ensure the titles are designed for high ranking and audience engagement. Format the output using HTML tags for better readability.",
     form: [
       {
-        label: "Enter your content or topic",
+        label: "Enter your YouTube video topic keywords",
+        field: "input",
+        name: "keywords",
+        required: true,
+      },
+      {
+        label: "Enter YouTube description outline here",
         field: "textarea",
-        name: "content_topic",
-        required: true,
+        name: "outline",
       },
     ],
   },
-
-  // ==================== SOCIAL MEDIA ====================
-  {
-    name: "Social Media Post Caption",
-    description:
-      "Generate catchy captions for social media posts to maximize engagement and reach.",
-    category: "Social Media",
-    icon: "https://cdn-icons-png.flaticon.com/128/16823/16823329.png",
-    slug: "generate-social-media-caption",
-    prompt:
-      "Generate 5 catchy and engaging social media captions for a post about [topic]. The captions should be concise, engaging, and suitable for platforms like Instagram, Twitter, or Facebook.",
-    form: [
-      {
-        label: "Enter your content or topic",
-        field: "input",
-        name: "content_topic",
-        required: true,
-      },
-    ],
-  },
-
-  {
-    name: "Hashtag Generator",
-    description:
-      "Create a set of optimized hashtags for social media posts based on your topic or niche.",
-    category: "Social Media",
-    icon: "https://cdn-icons-png.flaticon.com/128/7045/7045432.png",
-    slug: "generate-hashtags",
-    prompt:
-      "Generate 10 high-performing hashtags related to [provided topic]. Ensure they are optimized for engagement and reach on social media.",
-    form: [
-      {
-        label: "Enter your content topic",
-        field: "input",
-        name: "hashtag_topic",
-        required: true,
-      },
-    ],
-  },
-
-  // ==================== VIDEO ====================
   {
     name: "YouTube Description Generator",
     description:
-      "Generate engaging and keyword-rich YouTube descriptions to boost video SEO and attract more viewers.",
-    category: "Video",
-    icon: "https://cdn-icons-png.flaticon.com/128/1384/1384060.png",
-    slug: "generate-youtube-description",
+      "An AI tool that generates engaging and concise YouTube video descriptions.",
+    category: "YouTube Tools",
+    icon: "https://cdn-icons-png.flaticon.com/128/2111/2111748.png",
+    slug: "youtube-description",
     prompt:
-      "Create a compelling and SEO-optimized YouTube video description for [provided video title]. Include a strong hook, video summary, relevant keywords, and a call-to-action.",
+      "Generate a **concise, engaging, and keyword-rich** YouTube video description based on the provided topic and outline. Use **emojis and formatting** to enhance readability. The description should be between **4-5 lines** and formatted in a rich text editor.",
     form: [
       {
-        label: "Enter your video title or topic",
+        label: "Enter your video topic/title",
         field: "input",
-        name: "video_title",
+        name: "topic",
         required: true,
+      },
+      {
+        label: "Enter YouTube Outline here",
+        field: "textarea",
+        name: "outline",
       },
     ],
   },
-
-  // ==================== BRANDING ====================
   {
-    name: "Slogan Generator",
+    name: "Article Rewriter (Plagiarism-Free)",
     description:
-      "Generate catchy and memorable slogans for brands, businesses, or marketing campaigns.",
-    category: "Branding",
-    icon: "https://cdn-icons-png.flaticon.com/128/18131/18131275.png",
-    slug: "generate-slogan",
+      "Use this tool to rewrite existing articles or blog posts to make them plagiarism-free while maintaining quality.",
+    icon: "https://cdn-icons-png.flaticon.com/128/3131/3131607.png",
+    category: "Rewriting Tool",
+    slug: "rewrite-article",
     prompt:
-      "Create 5 catchy and memorable slogans for [brand name or product]. Ensure they reflect the brand's identity and are easy to remember.",
+      "Rewrite the given article while **maintaining its original meaning** but making it **plagiarism-free, AI-detection safe, and naturally written**. Ensure the text remains engaging and well-structured. Format the output in a rich text editor.",
     form: [
       {
-        label: "Enter the brand or product name",
-        field: "input",
-        name: "brand_name",
+        label:
+          "🤖 Provide your Article/Blogpost or any other content to rewrite.",
+        field: "textarea",
+        name: "article",
         required: true,
       },
     ],
   },
-
+  {
+    name: "Code Generator",
+    description: "An AI model that generates programming code in any language.",
+    icon: "https://cdn-icons-png.flaticon.com/128/6062/6062646.png",
+    category: "Coding",
+    slug: "write-code",
+    prompt:
+      "Generate a **well-structured, efficient, and optimized** code snippet based on the given description and programming language. Ensure proper syntax and best coding practices. Output the code inside a formatted code block.",
+    form: [
+      {
+        label:
+          "Enter a description of the code you want, along with the programming language",
+        field: "textarea",
+        name: "codeDescription",
+        required: true,
+      },
+    ],
+  },
+  {
+    name: "Code Bug Detector",
+    description:
+      "This AI tool analyzes your code, identifies bugs, and provides solutions.",
+    icon: "https://cdn-icons-png.flaticon.com/128/4426/4426267.png",
+    category: "Coding",
+    slug: "code-bug-detector",
+    prompt:
+      "Analyze the given code, identify any **errors or bugs**, and provide **a detailed explanation** of the issue along with an optimized solution. Format the response in a rich text editor with a structured breakdown inside a formatted code block.",
+    form: [
+      {
+        label: "Enter the code you want to debug",
+        field: "textarea",
+        name: "codeInput",
+        required: true,
+      },
+    ],
+  },
   {
     name: "Tagline Generator",
     description:
-      "Generate unique and impactful taglines that reinforce brand identity and resonate with the target audience.",
-    category: "Branding",
-    icon: "https://cdn-icons-png.flaticon.com/128/16871/16871407.png",
-    slug: "generate-tagline",
+      "Struggling to find the perfect tagline for your brand? Let our AI-tool assist you in creating a tagline that stands out.",
+    icon: "https://cdn-icons-png.flaticon.com/128/2178/2178616.png",
+    category: "Marketing",
+    slug: "tagline-generator",
     prompt:
-      "Create 5 impactful and memorable taglines for [brand or product]. Ensure they are concise and aligned with the brand's vision.",
+      "Generate **5-10 catchy and memorable** taglines based on the given brand name and product description. Ensure the taglines are **creative, engaging, and aligned with the brand identity**. Output the results in a rich text editor.",
     form: [
       {
-        label: "Enter the brand or product name",
+        label: "Product/Brand Name",
         field: "input",
-        name: "brand_name",
+        name: "productName",
+        required: true,
+      },
+      {
+        label: "What you are selling / Marketing",
+        field: "textarea",
+        name: "outline",
         required: true,
       },
     ],
   },
-
-  // ==================== MARKETING ====================
   {
-    name: "Call-to-Action (CTA) Generator",
+    name: "Product Description Generator",
     description:
-      "Generate compelling calls-to-action for landing pages, ads, or email campaigns to increase conversions.",
+      "This AI tool creates compelling, SEO-friendly product descriptions for e-commerce.",
+    icon: "https://cdn-icons-png.flaticon.com/128/679/679922.png",
     category: "Marketing",
-    icon: "https://cdn-icons-png.flaticon.com/128/4321/4321132.png",
-    slug: "generate-cta",
+    slug: "product-description",
     prompt:
-      "Generate 5 powerful and persuasive call-to-action phrases for [provided purpose]. Ensure they are clear, action-driven, and conversion-focused.",
+      "Generate a **concise, compelling, and SEO-optimized** product description based on the given product name and details. Ensure it is **engaging and persuasive** to encourage conversions. Format the output in a rich text editor.",
     form: [
       {
-        label: "Enter the purpose of the CTA",
+        label: "Product Name",
         field: "input",
-        name: "cta_purpose",
+        name: "productName",
         required: true,
       },
-    ],
-  },
-
-  {
-    name: "Landing Page Copy Generator",
-    description:
-      "Generate persuasive landing page copy designed to capture leads and drive conversions.",
-    category: "Marketing",
-    icon: "https://cdn-icons-png.flaticon.com/128/8901/8901502.png",
-    slug: "generate-landing-page-copy",
-    prompt:
-      "Create a compelling and persuasive landing page copy for [provided product or service]. Ensure it includes a strong headline, value proposition, and call-to-action.",
-    form: [
       {
-        label: "Enter the product or service name",
-        field: "input",
-        name: "product_service_name",
+        label: "Product Details",
+        field: "textarea",
+        name: "outline",
         required: true,
       },
     ],
