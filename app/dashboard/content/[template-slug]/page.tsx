@@ -32,7 +32,7 @@ const CreateNewContent = (props: PROPS) => {
           <ArrowLeft /> Back
         </Button>
       </Link>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 p-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 p-5">
         {/* Form Section */}
         <FormSection
           selectedTemplate={selectedTemplate}
