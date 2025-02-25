@@ -19,7 +19,6 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
 
   /**
    * Handle input change event and update the form data state.
-   *
    */
   const handleInputChange = (e: any) => {
     const { name, value } = e.target;
@@ -28,7 +27,6 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
 
   /**
    * Handle form submit event and update the form data state.
-   *
    */
   const onSubmit = (e: any) => {
     e.preventDefault();
@@ -60,9 +58,21 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
           </div>
         ))}
         {/* Submit Button, disabled if loading */}
-        <Button type="submit" className="w-full py-5" disabled={loading}>
-          {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin"/>}
-          Generate
+        <Button
+          type="submit"
+          className={`w-full py-5 transition-all duration-300 ${
+            loading ? "bg-gray-400 cursor-not-allowed" : "bg-primary"
+          } ${loading ? "animate-pulse" : "hover:scale-105"}`}
+          disabled={loading}
+        >
+          {loading ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Generating...
+            </>
+          ) : (
+            "Generate"
+          )}
         </Button>
       </form>
     </div>
