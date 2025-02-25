@@ -2,11 +2,11 @@ export default [
   {
     name: "Blog Title Generator",
     description:
-      "An AI tool that generates blog titles based on your blog information.",
+      "Generate compelling and SEO-friendly blog titles tailored to your niche and content outline.",
     category: "Blog",
     icon: "https://cdn-icons-png.flaticon.com/128/4186/4186534.png",
     prompt:
-      "Generate 5 unique and engaging blog title ideas based on the given niche and outline. Ensure the titles are **catchy, SEO-friendly, and compelling**. Output the results in bullet points inside a rich text editor.",
+      "Generate **5 unique and attention-grabbing** blog title ideas based on the provided niche and outline. Titles should be **SEO-friendly, engaging, and designed for high click-through rates**. Output results as a bullet list.",
     slug: "generate-blog-title",
     form: [
       {
@@ -16,7 +16,7 @@ export default [
         required: true,
       },
       {
-        label: "Enter blog outline",
+        label: "Enter blog outline (optional)",
         field: "textarea",
         name: "outline",
       },
@@ -25,12 +25,12 @@ export default [
   {
     name: "Blog Content Generator",
     description:
-      "An AI tool that generates high-quality blog content based on your topic and outline.",
+      "Create high-quality, well-structured blog content based on your topic and outline.",
     category: "Blog",
     icon: "https://cdn-icons-png.flaticon.com/128/4905/4905454.png",
     slug: "blog-content-generation",
     prompt:
-      "Write a detailed and **well-structured** blog post based on the provided topic and outline. Ensure the content is **engaging, informative, and optimized for readability**. Format the output in rich text with headings, subheadings, and bullet points where necessary.",
+      "Write a **detailed, well-researched, and engaging** blog post based on the given topic and outline. Ensure the content is **structured with clear headings, subheadings, bullet points, and optimized for readability**. Avoid introductory and concluding filler phrases. Output in plain text.",
     form: [
       {
         label: "Enter your blog topic",
@@ -39,7 +39,7 @@ export default [
         required: true,
       },
       {
-        label: "Enter blog Outline here",
+        label: "Enter blog outline (optional)",
         field: "textarea",
         name: "outline",
       },
@@ -48,15 +48,15 @@ export default [
   {
     name: "Blog Topic Ideas Generator",
     description:
-      "An AI tool that generates creative and engaging blog topic ideas based on your niche.",
+      "Generate trending and engaging blog topic ideas tailored to your niche.",
     category: "Blog",
     icon: "https://cdn-icons-png.flaticon.com/128/11497/11497847.png",
     slug: "blog-topic-idea",
     prompt:
-      "Generate 5 unique blog topic ideas based on the given niche. Ensure the topics are **trendy, attention-grabbing, and suitable for SEO**. Output the results in bullet points inside a rich text editor.",
+      "Generate **5 unique, trending, and SEO-optimized** blog topic ideas based on the given niche. Topics should be **engaging, relevant, and structured to attract readers**. Output results as a bullet list.",
     form: [
       {
-        label: "Enter your Niche",
+        label: "Enter your niche",
         field: "input",
         name: "niche",
         required: true,
@@ -66,12 +66,12 @@ export default [
   {
     name: "YouTube SEO Title Generator",
     description:
-      "An AI tool that generates high-ranking, SEO-optimized YouTube titles.",
+      "Create engaging, click-worthy, and SEO-optimized YouTube video titles.",
     category: "YouTube Tools",
     icon: "https://cdn-icons-png.flaticon.com/128/402/402075.png",
     slug: "youtube-seo-title",
     prompt:
-      "Generate **5 highly engaging, click-worthy, and SEO-optimized** YouTube video titles based on the given keywords and outline. Ensure the titles are designed for high ranking and audience engagement. Format the output using HTML tags for better readability.",
+      "Generate **5 high-converting, attention-grabbing, and SEO-optimized** YouTube video titles based on the given keywords and outline. Titles should maximize **click-through rates and ranking potential**. Output results as a bullet list.",
     form: [
       {
         label: "Enter your YouTube video topic keywords",
@@ -80,7 +80,7 @@ export default [
         required: true,
       },
       {
-        label: "Enter YouTube description outline here",
+        label: "Enter YouTube video description outline (optional)",
         field: "textarea",
         name: "outline",
       },
@@ -89,12 +89,12 @@ export default [
   {
     name: "YouTube Description Generator",
     description:
-      "An AI tool that generates engaging and concise YouTube video descriptions.",
+      "Generate compelling and keyword-rich YouTube video descriptions with proper formatting.",
     category: "YouTube Tools",
     icon: "https://cdn-icons-png.flaticon.com/128/2111/2111748.png",
     slug: "youtube-description",
     prompt:
-      "Generate a **concise, engaging, and keyword-rich** YouTube video description based on the provided topic and outline. Use **emojis and formatting** to enhance readability. The description should be between **4-5 lines** and formatted in a rich text editor.",
+      "Write a **concise, engaging, and keyword-rich** YouTube video description based on the given topic and outline. Use **emojis, line breaks, and formatting** for better readability. Keep it between **4-5 lines** for optimal engagement. Output in plain text.",
     form: [
       {
         label: "Enter your video topic/title",
@@ -103,7 +103,7 @@ export default [
         required: true,
       },
       {
-        label: "Enter YouTube Outline here",
+        label: "Enter YouTube video description outline (optional)",
         field: "textarea",
         name: "outline",
       },
@@ -112,16 +112,15 @@ export default [
   {
     name: "Article Rewriter (Plagiarism-Free)",
     description:
-      "Use this tool to rewrite existing articles or blog posts to make them plagiarism-free while maintaining quality.",
+      "Rewrite any article while keeping the original meaning intact and making it plagiarism-free.",
     icon: "https://cdn-icons-png.flaticon.com/128/3131/3131607.png",
     category: "Rewriting Tool",
     slug: "rewrite-article",
     prompt:
-      "Rewrite the given article while **maintaining its original meaning** but making it **plagiarism-free, AI-detection safe, and naturally written**. Ensure the text remains engaging and well-structured. Format the output in a rich text editor.",
+      "Rewrite the given article **while maintaining its original meaning but making it plagiarism-free and AI-detection safe**. Ensure it remains **engaging, well-structured, and easy to read**. Avoid generic introductory or concluding remarks. Output in plain text.",
     form: [
       {
-        label:
-          "🤖 Provide your Article/Blogpost or any other content to rewrite.",
+        label: "Provide the article/blog post to rewrite",
         field: "textarea",
         name: "article",
         required: true,
@@ -130,16 +129,16 @@ export default [
   },
   {
     name: "Code Generator",
-    description: "An AI model that generates programming code in any language.",
+    description:
+      "Generate efficient and well-structured code snippets in any programming language.",
     icon: "https://cdn-icons-png.flaticon.com/128/6062/6062646.png",
     category: "Coding",
     slug: "write-code",
     prompt:
-      "Generate a **well-structured, efficient, and optimized** code snippet based on the given description and programming language. Ensure proper syntax and best coding practices. Output the code inside a formatted code block.",
+      "Generate a **clean, efficient, and optimized** code snippet based on the given description and programming language. Follow **best coding practices** and provide a **short explanation if necessary**. Output inside a properly formatted code block.",
     form: [
       {
-        label:
-          "Enter a description of the code you want, along with the programming language",
+        label: "Describe the code you need (include programming language)",
         field: "textarea",
         name: "codeDescription",
         required: true,
@@ -149,12 +148,12 @@ export default [
   {
     name: "Code Bug Detector",
     description:
-      "This AI tool analyzes your code, identifies bugs, and provides solutions.",
+      "Analyze and debug code by identifying errors and providing optimized solutions.",
     icon: "https://cdn-icons-png.flaticon.com/128/4426/4426267.png",
     category: "Coding",
     slug: "code-bug-detector",
     prompt:
-      "Analyze the given code, identify any **errors or bugs**, and provide **a detailed explanation** of the issue along with an optimized solution. Format the response in a rich text editor with a structured breakdown inside a formatted code block.",
+      "Analyze the given code and **identify any errors, bugs, or inefficiencies**. Provide a **detailed explanation** of the issue and an **optimized solution**. Output in a structured format with a code block.",
     form: [
       {
         label: "Enter the code you want to debug",
@@ -167,12 +166,12 @@ export default [
   {
     name: "Tagline Generator",
     description:
-      "Struggling to find the perfect tagline for your brand? Let our AI-tool assist you in creating a tagline that stands out.",
+      "Generate unique, catchy, and brand-aligned taglines for your business or product.",
     icon: "https://cdn-icons-png.flaticon.com/128/2178/2178616.png",
     category: "Marketing",
     slug: "tagline-generator",
     prompt:
-      "Generate **5-10 catchy and memorable** taglines based on the given brand name and product description. Ensure the taglines are **creative, engaging, and aligned with the brand identity**. Output the results in a rich text editor.",
+      "Generate **5-10 creative, memorable, and brand-aligned** taglines based on the given product/brand details. Ensure they are **engaging, unique, and resonate with the target audience**. Output results as a bullet list.",
     form: [
       {
         label: "Product/Brand Name",
@@ -181,7 +180,7 @@ export default [
         required: true,
       },
       {
-        label: "What you are selling / Marketing",
+        label: "Describe the product/service",
         field: "textarea",
         name: "outline",
         required: true,
@@ -191,12 +190,12 @@ export default [
   {
     name: "Product Description Generator",
     description:
-      "This AI tool creates compelling, SEO-friendly product descriptions for e-commerce.",
+      "Create persuasive and SEO-optimized product descriptions for e-commerce and marketing.",
     icon: "https://cdn-icons-png.flaticon.com/128/679/679922.png",
     category: "Marketing",
     slug: "product-description",
     prompt:
-      "Generate a **concise, compelling, and SEO-optimized** product description based on the given product name and details. Ensure it is **engaging and persuasive** to encourage conversions. Format the output in a rich text editor.",
+      "Generate a **compelling, SEO-friendly, and persuasive** product description based on the given product name and details. Ensure it is **engaging, clear, and optimized for conversions**. Avoid unnecessary introduction or conclusion. Output in plain text.",
     form: [
       {
         label: "Product Name",
