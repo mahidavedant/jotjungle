@@ -128,6 +128,35 @@ export default [
     ],
   },
   {
+    name: "Translator",
+    description: "Translate text between different languages with ease.",
+    category: "Language Tools",
+    icon: "https://cdn-icons-png.flaticon.com/128/8361/8361117.png",
+    slug: "text-translator",
+    prompt:
+      "Translate the provided text from the **source language** to the **target language**. Ensure the translation is accurate, maintains the original meaning, and is natural. Output the translated text in plain text.",
+    form: [
+      {
+        label: "Enter text to translate",
+        field: "textarea",
+        name: "text",
+        required: true,
+      },
+      {
+        label: "Source Language",
+        field: "input",
+        name: "sourceLanguage",
+        required: true,
+      },
+      {
+        label: "Target Language",
+        field: "input",
+        name: "targetLanguage",
+        required: true,
+      },
+    ],
+  },
+  {
     name: "Code Generator",
     description:
       "Generate efficient and well-structured code snippets in any programming language.",
