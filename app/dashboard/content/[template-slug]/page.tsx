@@ -16,6 +16,7 @@ import { useUser } from "@clerk/nextjs";
 import moment from "moment";
 import { CREDITS_CONFIG } from "@/app/config/credits";
 import toast from 'react-hot-toast';
+import { useCredits } from "@/app/context/CreditsContext";
 
 
 interface PROPS {
@@ -25,6 +26,8 @@ interface PROPS {
 }
 
 const CreateNewContent = (props: PROPS) => {
+  const { refreshCredits } = useCredits();
+  
   const params = useParams();
   const [loading, setLoading] = useState(false);
   const [aiOutput, setAiOutput] = useState<string>();
@@ -89,7 +92,7 @@ const CreateNewContent = (props: PROPS) => {
       createdBy: user?.primaryEmailAddress?.emailAddress,
       createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
     });
-    console.log(result);
+    await refreshCredits();
   };
 
   return (

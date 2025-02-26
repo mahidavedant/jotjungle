@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,16 @@ import { db } from "@/utils/db";
 import { AiOutput } from "@/utils/schema";
 import { eq } from "drizzle-orm";
 import { useRouter } from "next/navigation";
+import { useCredits } from "@/app/context/CreditsContext";
+
+interface HistoryCardProps {
+  id: string;
+  formData: string;
+  templateSlug: string;
+  aiResponse: string;
+  createdAt: string;
+  onDelete: () => void;
+}
 
 const getTemplateIcon = (slug: string) => {
   const template = Templates.find((t) => t.slug === slug);
@@ -18,26 +28,21 @@ const getTemplateIcon = (slug: string) => {
 
 const HistoryCard = ({ 
   id, 
-  templateSlug, 
   formData, 
+  templateSlug, 
   aiResponse, 
   createdAt, 
   onDelete 
-}: {
-  id: string;
-  templateSlug: string;
-  formData: string;
-  aiResponse: string;
-  createdAt: Date;
-  onDelete: () => void;
-}) => {
+}: HistoryCardProps) => {
   const router = useRouter();
-  const [isDeleting, setIsDeleting] = React.useState(false);
+  const { handleHistoryDelete } = useCredits();
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const handleDelete = async () => {
     try {
       setIsDeleting(true);
       await db.delete(AiOutput).where(eq(AiOutput.id, parseInt(id)));
+      await handleHistoryDelete(); // Add this line
       onDelete();
       router.refresh();
     } catch (error) {

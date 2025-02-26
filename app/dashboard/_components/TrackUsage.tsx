@@ -4,27 +4,15 @@ import { db } from "@/utils/db";
 import { AiOutput } from "@/utils/schema";
 import { CREDITS_CONFIG } from "@/app/config/credits";
 import Link from "next/link";
+import { useCredits } from "@/app/context/CreditsContext";
 
-const TrackUsage = ({ onDelete }: { onDelete?: boolean }) => {
-  const [usedCredits, setUsedCredits] = useState(0);
+const TrackUsage = () => {
+  const { usedCredits, refreshCredits } = useCredits();
   const totalCredits = CREDITS_CONFIG.getTotalCredits();
 
   useEffect(() => {
-    const calculateUsedCredits = async () => {
-      try {
-        const outputs = await db.select().from(AiOutput);
-        const totalWords = outputs.reduce((acc, output) => {
-          const wordCount = output.aiResponse?.trim().split(/\s+/).length ?? 0;
-          return acc + wordCount;
-        }, 0);
-        setUsedCredits(totalWords);
-      } catch (error) {
-        console.error("Error calculating used credits:", error);
-      }
-    };
-
-    calculateUsedCredits();
-  }, [onDelete]); 
+    refreshCredits();
+  }, [refreshCredits]);
 
   const percentage = (usedCredits / totalCredits) * 100;
 
@@ -62,7 +50,7 @@ const TrackUsage = ({ onDelete }: { onDelete?: boolean }) => {
             }`}
           >
             {CREDITS_CONFIG.isOverLimit(usedCredits) 
-              ? 'Upgrade Plan (Required)' 
+              ? 'Upgrade Plan(Required)' 
               : 'Upgrade to Pro'}
           </Button>
         </Link>

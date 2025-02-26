@@ -1,19 +1,16 @@
 "use client";
 
-import { FileClock, Home, Settings2, Wallet2 } from "lucide-react";
+import { FileClock, Home, Settings2, Wallet2, LogOut } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect } from "react";
+import React from "react";
 import TrackUsage from "./TrackUsage";
+import { useClerk } from "@clerk/nextjs";
 
-/**
- * Side navigation component.
- *
- * This component renders a side navigation menu with links to various pages.
- *
- * @returns Side navigation component
- */
 const SideNav = () => {
+  const path = usePathname();
+  const { signOut } = useClerk();
+
   const MenuList = [
     {
       name: "Home",
@@ -34,10 +31,13 @@ const SideNav = () => {
       name: "Settings",
       icon: Settings2,
       path: "/dashboard/settings",
-    },
+    }
   ];
 
-  const path = usePathname();
+  const handleSignOut = async () => {
+    await signOut();
+    window.location.href = '/';
+  };
 
   return (
     <div className="relative h-screen p-5 shadow-sm border bg-white">
@@ -60,7 +60,17 @@ const SideNav = () => {
             </div>
           </Link>
         ))}
+        
+        {/* Sign Out Button */}
+        <div
+          onClick={handleSignOut}
+          className="flex gap-2 mb-2 p-3 hover:bg-red-500 hover:text-white rounded-lg cursor-pointer items-center "
+        >
+          <LogOut className="w-5 h-5" />
+          <h2 className="text-md-">Sign Out</h2>
+        </div>
       </div>
+      
       {/* Credit Usage Info */}
       <div className="absolute bottom-10 left-0 w-full">
         <TrackUsage />
