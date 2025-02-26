@@ -6,16 +6,19 @@ import TemplatesSection from "./_components/TemplatesSection";
 
 const Dashboard = () => {
   const [userSearchInput, setUserSearchInput] = useState<string>();
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   return (
     <div>
-      {/* Search Section */}
       <SearchSection
         onSearchInput={(value: string) => setUserSearchInput(value)}
+        onCategorySelect={(category: string | null) => setSelectedCategory(category)}
+        selectedCategory={selectedCategory}
       />
-
-      {/* Templates Section */}
-      <TemplatesSection userSearchInput={userSearchInput} />
+      <TemplatesSection 
+        userSearchInput={userSearchInput} 
+        selectedCategory={selectedCategory}
+      />
     </div>
   );
 };

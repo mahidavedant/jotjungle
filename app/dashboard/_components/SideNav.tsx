@@ -1,7 +1,7 @@
 "use client";
 
 import { FileClock, Home, Settings2, Wallet2 } from "lucide-react";
-import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect } from "react";
 
@@ -37,10 +37,7 @@ const SideNav = () => {
   ];
 
   const path = usePathname();
-  useEffect(() => {
-    console.log(path);
-  }, [path]);
-
+  
   return (
     <div className="h-screen p-5 shadow-sm border bg-white">
       <div className="flex justify-center">
@@ -52,14 +49,15 @@ const SideNav = () => {
       {/* Menu List */}
       <div className="mt-3">
         {MenuList.map((item, index) => (
-          <div
-            key={index}
-            className={`flex gap-2 mb-2 p-3 hover:bg-primary hover:text-white rounded-lg cursor-pointer 
-              items-center ${path == item.path && "bg-primary text-white"}`}
-          >
-            <item.icon className="w-5 h-5" />
-            <h2 className="text-md-">{item.name}</h2>
-          </div>
+          <Link href={item.path} key={index}>
+            <div
+              className={`flex gap-2 mb-2 p-3 hover:bg-primary hover:text-white rounded-lg cursor-pointer 
+                items-center ${path == item.path && "bg-primary text-white"}`}
+            >
+              <item.icon className="w-5 h-5" />
+              <h2 className="text-md-">{item.name}</h2>
+            </div>
+          </Link>
         ))}
       </div>
     </div>

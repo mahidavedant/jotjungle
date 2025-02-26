@@ -1,3 +1,17 @@
+export const CategoryColors = {
+  'Blog': 'bg-blue-100 text-blue-800',
+  'Content Creation': 'bg-green-100 text-green-800',
+  'Language & Writing': 'bg-purple-100 text-purple-800',
+  'Coding': 'bg-orange-100 text-orange-800',
+  'Business & Marketing': 'bg-pink-100 text-pink-800',
+  'Business Communication': 'bg-indigo-100 text-indigo-800',
+  'Career Development': 'bg-violet-100 text-violet-800',
+  'Social Media': 'bg-cyan-100 text-cyan-800',
+  'Technical Writing': 'bg-amber-100 text-amber-800',
+  'Productivity': 'bg-emerald-100 text-emerald-800',
+  'Rewriting Tool': 'bg-red-100 text-red-800'
+} as const;
+
 export default [
   {
     name: "Blog Title Generator",
@@ -422,6 +436,29 @@ export default [
         field: "textarea",
         name: "context",
         required: true,
+      },
+    ],
+  },
+  {
+    name: "Daily Planner",
+    description:
+      "Organize and plan your day effectively by setting tasks and priorities.",
+    category: "Productivity",
+    icon: "https://cdn-icons-png.flaticon.com/128/9206/9206851.png",
+    slug: "daily-planner",
+    prompt:
+      "Create a **personalized, prioritized, and time-blocked daily plan** based on the given tasks and goals. Organize the day with time slots for each task 🕒 and include reminders for breaks 🛑. The plan should ensure **maximum productivity**, keeping the day balanced ⚖️ and efficient. **Start directly with the schedule**. Output in plain text with clear time blocks and emojis for better clarity. 🌟",
+    form: [
+      {
+        label: "Enter your tasks for the day",
+        field: "textarea",
+        name: "tasks",
+        required: true,
+      },
+      {
+        label: "Enter your goals for the day (optional)",
+        field: "textarea",
+        name: "goals",
       },
     ],
   },

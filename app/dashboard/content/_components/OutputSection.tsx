@@ -55,6 +55,7 @@ const OutputSection = ({ aiOutput }: PROPS) => {
           onChange={() =>
             // Prints markdown as you type on editor
             console.log(editorRef.current.getInstance().getMarkdown())
+          
           }
         />
       </div>

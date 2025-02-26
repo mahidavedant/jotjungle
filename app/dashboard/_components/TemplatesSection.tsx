@@ -21,27 +21,34 @@ export interface FORM {
   required?: boolean;
 }
 
-const TemplatesSection = ({ userSearchInput }: any) => {
+const TemplatesSection = ({ 
+  userSearchInput, 
+  selectedCategory 
+}: { 
+  userSearchInput?: string;
+  selectedCategory: string | null;
+}) => {
   const [templateList, setTemplateList] = useState(Templates);
 
-  /* Search funtionality: Filter templates based on user input
-   *
-   * If userSearchInput is provided, filter the templates based on the user input.
-   * Otherwise, set the templateList to the original list of templates.
-   *
-   */
   useEffect(() => {
+    let filteredTemplates = Templates;
+
+    // Filter by search input
     if (userSearchInput) {
-      console.log("User Input:", userSearchInput);
-      const filteredTemplates = Templates.filter((template) =>
+      filteredTemplates = filteredTemplates.filter((template) =>
         template.name.toLowerCase().includes(userSearchInput.toLowerCase())
       );
-      console.log("Filtered Templates:", filteredTemplates);
-      setTemplateList(filteredTemplates);
-    } else {
-      setTemplateList(Templates);
     }
-  }, [userSearchInput]);
+
+    // Filter by category
+    if (selectedCategory) {
+      filteredTemplates = filteredTemplates.filter((template) =>
+        template.category === selectedCategory
+      );
+    }
+
+    setTemplateList(filteredTemplates);
+  }, [userSearchInput, selectedCategory]);
 
   return (
     <div className="p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
