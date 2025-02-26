@@ -1,8 +1,11 @@
-<h1 align="center">
+<!-- <h1 align="center">
   <span style="background: linear-gradient(to right, #4F46E5, #9B4DFF, #FF9CFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">
     JotJungle
   </span>
-</h1>
+</h1> -->
+<div align="center">
+  <img src="media/JotJungle-title.png" alt="JotJungle" width="300px"/>
+</div>
 
 <div align="center">
 <img src="media/JotJungle-landing.png" alt="JotJungle Banner" width="600px"/>
