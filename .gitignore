@@ -42,3 +42,6 @@ next-env.d.ts
 
 # Ignore drizzle config
 drizzle.config.ts
+
+# Ignore media files
+media/

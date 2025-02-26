@@ -1,9 +1,13 @@
-# JotJungle 🌳
+<h1 align="center">
+  <span style="background: linear-gradient(to right, #4F46E5, #9B4DFF, #FF9CFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">
+    JotJungle
+  </span>
+</h1>
 
 <div align="center">
-  <img src="https://placehold.co/600x300?text=JotJungle+Banner" alt="JotJungle Banner" width="600px"/>
-  
-  [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge)](https://jotjungle.vercel.app/)
+<img src="media/JotJungle-landing.png" alt="JotJungle Banner" width="600px"/>
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge)](https://jotjungle.vercel.app/)
 </div>
 
 ## 🎯 Overview
@@ -64,14 +68,56 @@ JotJungle is a sophisticated AI-powered content generation platform built with m
 ## 📸 Screenshots
 
 <div align="center">
-  <img src="https://placehold.co/800x400?text=Dashboard" alt="Dashboard" width="800px"/>
-  <p><em>Dashboard - Browse through AI-powered content generation templates</em></p>
+  <video 
+      width="800px" 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+    >
+      <source src="media/JotJungle-dashboard-searching.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  <p><em>Dashboard - Browse through AI-powered content generation templates with searching capabilities</em></p>
   
-  <img src="https://placehold.co/800x400?text=Content+Generation" alt="Content Generation" width="800px"/>
+  <video 
+      width="800px" 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+    >
+      <source src="media/JotJungle-content-generation.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   <p><em>Content Generation - Create high-quality content with AI assistance</em></p>
   
-  <img src="https://placehold.co/800x400?text=Rich+Text+Editor" alt="Editor" width="800px"/>
-  <p><em>Rich Text Editor - Professional editing capabilities with real-time preview</em></p>
+  <video 
+      width="800px" 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+    >
+      <source src="media/JotJungle-rich-text-editor.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  <p><em>Rich Text Editor - Editing capabilities</em></p>
+
+  <video 
+      width="800px" 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+    >
+      <source src="media/JotJungle-history.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  <p><em>History Page - Track and manage your generated content</em></p>
+
+  <img src="media/JotJungle-plans.png" alt="Billing" width="800px"/>
+  <p><em>Billing Page - (Feature Coming soon) </em></p>
 </div>
 
 ## 🚀 Getting Started
