@@ -20,7 +20,7 @@ JotJungle is a sophisticated AI-powered content generation platform built with m
 ### 🌟 Key Highlights
 
 - **AI-Powered Content Generation**: Utilizes advanced AI models for creating human-like content
-- **Multi-Template Support**: Diverse range of content templates for various use cases
+- **Multi-Template Support**: Diverse range of content templates for various use cases <span style="color: #00FF00;">( MORE COMING SOON!! )</span>
 - **Real-time Editing**: Rich text editor with markdown support for content refinement
 - **Modern UI/UX**: Clean, responsive interface built with Tailwind CSS
 - **Secure Authentication**: Enterprise-grade security with Clerk authentication
@@ -71,56 +71,30 @@ JotJungle is a sophisticated AI-powered content generation platform built with m
 ## 📸 Screenshots
 
 <div align="center">
-  <video 
-      width="800px" 
-      autoplay 
-      muted 
-      loop 
-      playsinline
-    >
-      <source src="media/JotJungle-dashboard-searching.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+  <img 
+    src="media/JotJungle-Dashboard.png" 
+    alt="Dashboard Search Demo"
+    width="800px"
+  />
   <p><em>Dashboard - Browse through AI-powered content generation templates with searching capabilities</em></p>
   
-  <video 
-      width="800px" 
-      autoplay 
-      muted 
-      loop 
-      playsinline
-    >
-      <source src="media/JotJungle-content-generation.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  <p><em>Content Generation - Create high-quality content with AI assistance</em></p>
+  <img 
+    src="media/JotJungle-Content-generation.png" 
+    alt="Dashboard Search Demo"
+    width="800px"
+  />
+  <p><em>Content Generation - Create high-quality content with Rich text editing capabilities</em></p>
   
-  <video 
-      width="800px" 
-      autoplay 
-      muted 
-      loop 
-      playsinline
-    >
-      <source src="media/JotJungle-rich-text-editor.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  <p><em>Rich Text Editor - Editing capabilities</em></p>
-
-  <video 
-      width="800px" 
-      autoplay 
-      muted 
-      loop 
-      playsinline
-    >
-      <source src="media/JotJungle-history.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+  <img 
+    src="media/JotJungle-history.png" 
+    alt="Dashboard Search Demo"
+    width="800px"
+  />
   <p><em>History Page - Track and manage your generated content</em></p>
+ 
 
   <img src="media/JotJungle-plans.png" alt="Billing" width="800px"/>
-  <p><em>Billing Page - (Feature Coming soon) </em></p>
+  <p><em>Billing Page - (TODO: Add functionality) </em></p>
 </div>
 
 ## 🚀 Getting Started
