@@ -3,6 +3,8 @@
 import React, { createContext, useContext, useState, useCallback } from 'react';
 import { db } from "@/utils/db";
 import { AiOutput } from "@/utils/schema";
+import { useUser } from "@clerk/nextjs";
+import { eq } from "drizzle-orm";
 
 type CreditsContextType = {
   usedCredits: number;
@@ -14,19 +16,31 @@ const CreditsContext = createContext<CreditsContextType | undefined>(undefined);
 
 export function CreditsProvider({ children }: { children: React.ReactNode }) {
   const [usedCredits, setUsedCredits] = useState(0);
+  const { user } = useUser();
 
   const refreshCredits = useCallback(async () => {
     try {
-      const outputs = await db.select().from(AiOutput);
+      if (!user?.primaryEmailAddress?.emailAddress) {
+        setUsedCredits(0);
+        return;
+      }
+
+      const outputs = await db
+        .select()
+        .from(AiOutput)
+        .where(eq(AiOutput.createdBy, user.primaryEmailAddress.emailAddress));
+
       const totalWords = outputs.reduce((acc, output) => {
         const wordCount = output.aiResponse?.trim().split(/\s+/).length ?? 0;
         return acc + wordCount;
       }, 0);
+      
       setUsedCredits(totalWords);
     } catch (error) {
       console.error("Error calculating credits:", error);
+      setUsedCredits(0);
     }
-  }, []);
+  }, [user?.primaryEmailAddress?.emailAddress]);
 
   const handleHistoryDelete = useCallback(async () => {
     await refreshCredits();
