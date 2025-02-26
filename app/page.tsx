@@ -2,15 +2,35 @@ import { Button } from "@/components/ui/button";
 import { auth } from "@clerk/nextjs/server";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Templates from "./(data)/Templates";
+
 
 export default async function Home() {
   const { userId } = await auth();
   const startCreatingLink = userId ? "/dashboard" : "/sign-up";
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-primary/5">
-      {/* Navigation */}
-      <nav className="p-5 flex justify-between items-center">
+    <div className="min-h-screen bg-gradient-to-b from-white to-primary/5 relative overflow-hidden">
+      {/* Animated Background Icons */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {Templates.map((template, index) => (
+          <img
+            key={template.slug}
+            src={template.icon}
+            alt=""
+            className="absolute opacity-5 w-12 h-12 animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${index * 0.5}s`,
+              transform: `rotate(${Math.random() * 360}deg)`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Existing Navigation */}
+      <nav className="p-5 flex justify-between items-center relative z-10">
         <h1 className="text-2xl font-bold bg-gradient-to-br from-[#4F46E5] via-[#9B4DFF] to-[#FF9CFF] text-transparent bg-clip-text">
           JotJungle𝌞
         </h1>

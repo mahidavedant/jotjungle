@@ -1,83 +1,101 @@
 # JotJungle 🌳
 
-JotJungle is an AI-powered content generation platform that helps users create various types of content including blog posts, YouTube descriptions, code snippets, and more.
+<div align="center">
+  <img src="https://placehold.co/600x300?text=JotJungle+Banner" alt="JotJungle Banner" width="600px"/>
+  
+  [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge)](https://jotjungle.vercel.app/)
+</div>
 
-## Demo
-Check out the live demo: (coming soon)
+## 🎯 Overview
 
-## Features
+JotJungle is a sophisticated AI-powered content generation platform built with modern web technologies. It empowers users to create high-quality content efficiently, from blog posts to technical documentation, leveraging the power of artificial intelligence.
 
-- 🤖 AI-Powered Content Generation
-- 📝 Multiple Content Templates
-  - Blog Title Generator
-  - Blog Content Generator
-  - YouTube SEO Title Generator
-  - Code Generator & Debugger
-  - Product Description Generator
-  - And more...
-- 🎨 Rich Text Editor with Markdown Support
-- 🔍 Template Search Functionality
-- 🌙 Dark Mode Support
-- 🔐 Authentication with Clerk
-- 💅 Modern UI with Tailwind CSS
+### 🌟 Key Highlights
 
-## Tech Stack
+- **AI-Powered Content Generation**: Utilizes advanced AI models for creating human-like content
+- **Multi-Template Support**: Diverse range of content templates for various use cases
+- **Real-time Editing**: Rich text editor with markdown support for content refinement
+- **Modern UI/UX**: Clean, responsive interface built with Tailwind CSS
+- **Secure Authentication**: Enterprise-grade security with Clerk authentication
 
-- **Framework:** Next.js 14 (App Router)
-- **Styling:** Tailwind CSS
-- **Authentication:** Clerk
-- **Rich Text Editor:** Toast UI Editor
-- **UI Components:** Custom components with Tailwind
-- **Icons:** Lucide Icons
-- **Fonts:** Google Fonts
+## ⚡ Core Features
 
-## Screens
+### 🤖 AI Content Generation
+- Smart content generation with context awareness
+- Multiple content types support
+- Customizable generation parameters
 
-### Dashboard
-![Dashboard](https://placehold.co/600x400?text=JotJungle+Dashboard)
-Browse through various AI-powered content generation templates
+### 📝 Template Library
+- Blog post generators
+- SEO-optimized title creators
+- Technical documentation templates
+- Social media content generators
+- Product description creators
+- Code generation and debugging tools
 
-### Content Generation
-![Content Generation](https://placehold.co/600x400?text=Content+Generation)
-Generate high-quality content using AI with customizable inputs
+### 🎨 Content Editing Suite
+- Rich text editor with Markdown support
+- Real-time preview
+- Format preservation
+- Export options
 
-### Rich Text Editor
-![Editor](https://placehold.co/600x400?text=Rich+Text+Editor)
-Edit and format your generated content with our powerful editor
+### 🛡️ Enterprise Features
+- Secure authentication
+- Role-based access control
+- Usage tracking and analytics
+- Content history and versioning
 
-### Authentication
-![Auth](https://placehold.co/600x400?text=Authentication)
-Secure authentication powered by Clerk
+## 🛠️ Technology Stack
 
-## Getting Started
+### Frontend
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS
+- **UI Components**: Custom components with shadcn/ui
+- **State Management**: React Context API
+- **Icons**: Lucide Icons
+
+### Backend & Infrastructure
+- **Authentication**: Clerk
+- **Database**: NeonDB (Serverless Postgres)
+- **ORM**: Drizzle ORM
+- **Deployment**: Vercel
+- **AI Integration**: Google Generative AI
+
+## 📸 Screenshots
+
+<div align="center">
+  <img src="https://placehold.co/800x400?text=Dashboard" alt="Dashboard" width="800px"/>
+  <p><em>Dashboard - Browse through AI-powered content generation templates</em></p>
+  
+  <img src="https://placehold.co/800x400?text=Content+Generation" alt="Content Generation" width="800px"/>
+  <p><em>Content Generation - Create high-quality content with AI assistance</em></p>
+  
+  <img src="https://placehold.co/800x400?text=Rich+Text+Editor" alt="Editor" width="800px"/>
+  <p><em>Rich Text Editor - Professional editing capabilities with real-time preview</em></p>
+</div>
+
+## 🚀 Getting Started
 
 ### Prerequisites
-
-- Node.js 18+ 
+- Node.js 18+
 - npm/yarn/pnpm
+- Git
 
-### Installation
-
-1. Clone the repository:
+### Quick Start
 ```bash
+# Clone the repository
 git clone https://github.com/yourusername/jotjungle.git
+
+# Navigate to project directory
 cd jotjungle
-```
 
-First, run the development server:
+# Install dependencies
+npm install
 
-```bash
+# Set up environment variables
+cp .env.example .env.local
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
-Open **[http://localhost:3000](http://localhost:3000)** with your browser to see the result.
-
-
-nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 

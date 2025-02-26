@@ -128,4 +128,23 @@
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
   }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.1;
+    }
+    50% {
+      transform: translateY(-20px) rotate(10deg);
+      opacity: 0.15;
+    }
+    100% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.1;
+    }
+  }
+
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
 }
