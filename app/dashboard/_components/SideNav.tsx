@@ -4,6 +4,7 @@ import { FileClock, Home, Settings2, Wallet2 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect } from "react";
+import TrackUsage from "./TrackUsage";
 
 /**
  * Side navigation component.
@@ -37,9 +38,9 @@ const SideNav = () => {
   ];
 
   const path = usePathname();
-  
+
   return (
-    <div className="h-screen p-5 shadow-sm border bg-white">
+    <div className="relative h-screen p-5 shadow-sm border bg-white">
       <div className="flex justify-center">
         <h2 className="text-2xl font-bold bg-gradient-to-br from-[#4F46E5] via-[#9B4DFF] to-[#FF9CFF] text-transparent bg-clip-text animate-gradient">
           JotJungle𝌞
@@ -60,9 +61,12 @@ const SideNav = () => {
           </Link>
         ))}
       </div>
+      {/* Credit Usage Info */}
+      <div className="absolute bottom-10 left-0 w-full">
+        <TrackUsage />
+      </div>
     </div>
   );
 };
 
 export default SideNav;
-

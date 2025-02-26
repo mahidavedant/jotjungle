@@ -14,6 +14,9 @@ import { db } from "@/utils/db";
 import { AiOutput } from "@/utils/schema";
 import { useUser } from "@clerk/nextjs";
 import moment from "moment";
+import { CREDITS_CONFIG } from "@/app/config/credits";
+import toast from 'react-hot-toast';
+
 
 interface PROPS {
   params: {
@@ -31,25 +34,50 @@ const CreateNewContent = (props: PROPS) => {
     (item) => item.slug === params["template-slug"]
   );
 
+  // Check credits usage
+  const checkCreditsUsage = async () => {
+    try {
+      const outputs = await db.select().from(AiOutput);
+      const totalWords = outputs.reduce((acc, output) => {
+        const wordCount = output.aiResponse?.trim().split(/\s+/).length ?? 0;
+        return acc + wordCount;
+      }, 0);
+      return totalWords;
+    } catch (error) {
+      console.error("Error calculating credits:", error);
+      return 0;
+    }
+  };
+
   // Generate AI Content
   const GenerateAiContent = async (formData: any) => {
+    const currentUsage = await checkCreditsUsage();
+    
+    if (CREDITS_CONFIG.isOverLimit(currentUsage)) {
+      toast.error("Usage Limit Exceeded - " + CREDITS_CONFIG.upgradeMessage);
+      return;
+    }
+
     setLoading(true);
+    try {
+      const selectedPrompt = selectedTemplate?.prompt;
+      const finalAiPrompt = JSON.stringify(formData) + ", " + selectedPrompt;
 
-    const selectedPrompt = selectedTemplate?.prompt;
-    const finalAiPrompt = JSON.stringify(formData) + ", " + selectedPrompt;
-
-    const result = await chatSession.sendMessage(finalAiPrompt);
-    console.log("AI Response:\n", result.response.text());
-
-    setAiOutput(result?.response.text());
-    // Save in DB
-    await SaveInDb(
-      JSON.stringify(formData),
-      selectedTemplate?.slug,
-      result?.response.text()
-    );
-
-    setLoading(false);
+      const result = await chatSession.sendMessage(finalAiPrompt);
+      const response = result?.response.text();
+      setAiOutput(response);
+      
+      await SaveInDb(
+        JSON.stringify(formData),
+        selectedTemplate?.slug,
+        response
+      );
+    } catch (error) {
+      console.error("Error generating content:", error);
+      alert("Failed to generate content");
+    } finally {
+      setLoading(false);
+    }
   };
 
   // Save in DB

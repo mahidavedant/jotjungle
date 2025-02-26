@@ -16,13 +16,13 @@ const getTemplateIcon = (slug: string) => {
   return template?.icon || "";
 };
 
-const HistoryCard = ({
-  id,
-  templateSlug,
-  formData,
-  aiResponse,
-  createdAt,
-  onDelete,
+const HistoryCard = ({ 
+  id, 
+  templateSlug, 
+  formData, 
+  aiResponse, 
+  createdAt, 
+  onDelete 
 }: {
   id: string;
   templateSlug: string;
@@ -58,6 +58,9 @@ const HistoryCard = ({
         (value.length > 100 ? value.substring(0, 100) + '...' : value) : value
     }));
   };
+
+  // Add word count calculation
+  const wordCount = aiResponse.trim().split(/\s+/).length;
 
   return (
     <Card className="p-5 hover:shadow-lg transition-all">
@@ -99,10 +102,18 @@ const HistoryCard = ({
         </div>
       </div>
 
-      {/* AI Response Preview */}
-      <p className="text-sm text-gray-600 line-clamp-3 mb-4">
-        {aiResponse.substring(0, 150)}...
-      </p>
+      {/* AI Response Preview with Word Count */}
+      <div className="mb-4">
+        <div className="flex justify-between items-center mb-1">
+          <p className="text-xs text-gray-500 font-medium">AI Response:</p>
+          <span className="text-xs text-gray-500">
+            {wordCount.toLocaleString()} words
+          </span>
+        </div>
+        <p className="text-sm text-gray-600 line-clamp-3">
+          {aiResponse.substring(0, 150)}...
+        </p>
+      </div>
 
       <div className="flex gap-2">
         <Link href={`/dashboard/history/${id}`} className="flex-1">
