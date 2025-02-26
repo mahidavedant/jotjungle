@@ -18,14 +18,8 @@ import { CREDITS_CONFIG } from "@/app/config/credits";
 import toast from 'react-hot-toast';
 import { useCredits } from "@/app/context/CreditsContext";
 
-
-interface PROPS {
-  params: {
-    "template-slug": string;
-  };
-}
-
-const CreateNewContent = (props: PROPS) => {
+// Remove the PROPS interface and directly type the component
+const CreateNewContent = () => {
   const { refreshCredits } = useCredits();
   
   const params = useParams();

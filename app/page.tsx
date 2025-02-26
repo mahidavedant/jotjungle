@@ -18,12 +18,12 @@ export default async function Home() {
           {!userId ? (
             <>
               <Link href="/sign-in">
-                <Button variant="outline" className="hover:bg-primary/5">
+                <Button variant="outline" className="hover:bg-primary/5 cursor-pointer">
                   Sign In
                 </Button>
               </Link>
               <Link href="/sign-up">
-                <Button variant="default" className="bg-primary hover:bg-primary/90">
+                <Button variant="default" className="bg-primary hover:bg-primary/90 cursor-pointer">
                   Sign Up
                 </Button>
               </Link>
@@ -87,7 +87,7 @@ export default async function Home() {
           <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Content?</h3>
           <p className="text-gray-600 mb-6">Join thousands of creators using JotJungle to generate amazing content.</p>
           <Link href={startCreatingLink}>
-            <Button className="bg-primary hover:bg-primary/90">
+            <Button className="bg-primary hover:bg-primary/90 cursor-pointer">
               Get Started Free
             </Button>
           </Link>

@@ -67,7 +67,7 @@ const SideNav = () => {
           className="flex gap-2 mb-2 p-3 hover:bg-red-500 hover:text-white rounded-lg cursor-pointer items-center "
         >
           <LogOut className="w-5 h-5" />
-          <h2 className="text-md-">Sign Out</h2>
+          <h2 className="text-md cursor-pointer">Sign Out</h2>
         </div>
       </div>
       
